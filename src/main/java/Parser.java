@@ -22,7 +22,7 @@ public class Parser {
                 myUi.horizontalRule();
             }
 
-            else if (args1[0].equals("find")) {
+            if (args1[0].equals("find")) {
                 String findItem = "";
                 for (int i = 1; i < args1.length; i++) {
                     findItem += args1[i] + " ";
@@ -94,16 +94,12 @@ public class Parser {
                 response+=myTasklist.numTaskUI();
 
             } else if (currInput.equals("list")) {
-
                 response+=myTasklist.listUI();
-
             } else if (args1[0].equals("done")) {
-
                 int index = Integer.parseInt(args1[1]) - 1;
                 myTasklist.getTasks().get(index).setDone();
                 response+="Nice I've marked this tasks as done\n";
                 response+=myTasklist.getTasks().get(index)+"\n";
-                
             } else {
                 response+="☹ OOPS!!! I'm sorry, but I don't know what that means :-(\n";
             }
